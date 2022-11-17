@@ -93,32 +93,41 @@ Using any or all of the following methods to optimize your model:
 
 ### Step 4: Write a Report on the Neural Network Model
 
-For this part of the assignment, you’ll write a report on the performance of the deep learning model you created for AlphabetSoup.
-
-The report should contain the following:
-
 1. **Overview** of the analysis: Explain the purpose of this analysis.
+
+The Purpose of thhis analysis is to demonstrate a neural network model to achieve a target performance higher than 75%
 
 2. **Results**: Using bulleted lists and images to support your answers, address the following questions.
 
   * Data Preprocessing
     * What variable(s) are the target(s) for your model?
+    The Variable Column used as target in the model is IS_SUCCESSFUL
+    
     * What variable(s) are the features for your model?
+    CLASSIFICATION, APPLICATION_TYPE, NAME and INCOME_AMT are features used for different optimazation models
+    
     * What variable(s) should be removed from the input data because they are neither targets nor features?
+    EIN,NAME were dropped when predicting in first two models and STATUS was also dropped for one Optimization and only EIN was dropped in other Optimization Model
 
 * Compiling, Training, and Evaluating the Model
     * How many neurons, layers, and activation functions did you select for your neural network model, and why?
+    
+    model without opt - 0.72 - 2 layers: 50, 20 - activation='relu' - epochs=100
+
+    model with opt1 - 0.739 - 3 layers: 50, 20, 10 - activation='relu' - epochs=250
+
+    model with opt2 - 0.693 - 4 layers: 50, 20, 10, 5 - activation='relu' - epochs=100 
+
+    model with opt3 - 0.79 - 3 layers: 50, 20, 10 - activation='relu' - epochs=100
+    
     * Were you able to achieve the target model performance?
+    Yes, with the third Optimization model I was able to achieve more than 75% accuracy
+    
     * What steps did you take in your attempts to increase model performance?
+    I increased the hidden layers in couple of optimization models with different features but the accuracy was less than 75%. Then i used a differnt feature and decreased one layer and eventually i was able to acheive a model greater then 75%.
+    
 
 3. **Summary**: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
 
-- - -
+Based on the models , more the hidden layers and the right input features your model accuracy tends to be higher.
 
-## Rubric
-
-[Unit 21 Homework Rubric](https://docs.google.com/document/d/1SLOROX0lqZwa1ms-iRbHMQr1QSsMT2k0boO9YpFBnHA/edit?usp=sharing)
-
-- - -
-
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
